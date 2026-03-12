@@ -45,13 +45,13 @@ string → HTML parser → no tags found → text node → display
 
 <img width="863" height="192" alt="image" src="https://github.com/user-attachments/assets/d74255f4-57fe-4252-9418-b36dc46115f0" />
 
-Now understanding all these facts, on viewing the source code i found out that this is how the 'document.write' function is being used in this lab,  
+Now understanding all these facts, on viewing the source code we find that this is how the 'document.write' function is being used in this lab,  
 the query is being pasted into the image path and so if simply a script attack is tried, it will simply fail because it just fails to fetch such a result because it stays trapped inside the  
 src attribute as part of the file path    
 but then analyse it and close the desired opening delimitters of the img src path check and simiply inside the document.write itself we forge the new ;   
 script using the script tags,  and use the alert finction as that is what the level requires us to do.  
 
-So keenly craft a payload so as to close the required openers and then follow it with the script.  
+So we craft a payload so as to close the required openers and then follow it with the script.  
 That should so it for the level.  
 
 
@@ -69,8 +69,7 @@ Whatever you typed after search= in the URL is now stored in the query variable,
 Yes, you can definitely select only a part of a string by using built-in JavaScript functions. Since window.location.search is a string property, you can chain these methods directly to it to "cut" out exactly what you want.  
 window.location.search.substring(1) etc   
 
-finally i dont exactly understand the usage of alias "sink" for the document.write function
-In web security, especially XSS analysis, we track data flow:
+ XSS analysis, we track data flow:
 User input → travels through code → ends somewhere dangerous
 That “dangerous endpoint” is called a:
 Sink — a place where data gets executed, rendered, or interpreted in a risky way.  
